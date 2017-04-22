@@ -1,9 +1,14 @@
-# api documentation for  [request-progress (v3.0.0)](https://github.com/IndigoUnited/node-request-progress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-request-progress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-request-progress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-request-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-request-progress)
+# npmdoc-request-progress
+
+#### api documentation for  [request-progress (v3.0.0)](https://github.com/IndigoUnited/node-request-progress#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-request-progress.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-request-progress) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-request-progress.svg)](https://travis-ci.org/npmdoc/node-npmdoc-request-progress)
+
 #### Tracks the download progress of a request made with mikeal/request, giving insight of various metrics including progress percent, download speed and time remaining
 
-[![NPM](https://nodei.co/npm/request-progress.png?downloads=true)](https://www.npmjs.com/package/request-progress)
+[![NPM](https://nodei.co/npm/request-progress.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/request-progress)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-request-progress/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-request-progress_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-request-progress/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-request-progress/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-request-progress/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-request-progress/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-request-progress/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-request-progress/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "IndigoUnited",
-        "email": "hello@indigounited.com",
         "url": "http://indigounited.com"
     },
     "bugs": {
@@ -57,13 +61,11 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "satazor",
-            "email": "andremiguelcruz@msn.com"
+            "name": "satazor"
         }
     ],
     "name": "request-progress",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/IndigoUnited/node-request-progress.git"
@@ -73,19 +75,10 @@
         "test-cov": "istanbul cover --dir test/coverage _mocha -- --bail && echo open test/coverage/lcov-report/index.html",
         "test-travis": "istanbul cover _mocha --report lcovonly -- --bail && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
     },
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "bin": {}
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module request-progress](#apidoc.module.request-progress)
-
-
-
-# <a name="apidoc.module.request-progress"></a>[module request-progress](#apidoc.module.request-progress)
 
 
 
