@@ -61,12 +61,73 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.request-progress">module request-progress</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.request-progress.request-progress">
+            function <span class="apidocSignatureSpan"></span>request-progress
+            <span class="apidocSignatureSpan">(request, options)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.request-progress" id="apidoc.module.request-progress">module request-progress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.request-progress.request-progress" id="apidoc.element.request-progress.request-progress">
+        function <span class="apidocSignatureSpan"></span>request-progress
+        <span class="apidocSignatureSpan">(request, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestProgress(request, options) {
+    var context;
+
+    if (request.progressContext) {
+        return request;
+    }
+
+    if (request.response) {
+        throw new Error(&#x27;Already got response, it\&#x27;s too late to track progress&#x27;);
+    }
+
+    // Parse options
+    options = options || {};
+    options.throttle = options.throttle == null ? 1000 : options.throttle;
+    options.delay = options.delay || 0;
+    options.lengthHeader = options.lengthHeader || &#x27;content-length&#x27;;
+
+    // Create context
+    context = {};
+    context.request = request;
+    context.options = options;
+    context.reportState = throttle(reportState.bind(null, context), options.throttle);
+    // context.startedAt = null;
+    // context.state = null;
+    // context.delayTimer = null;
+
+    // Attach listeners
+    request
+    .on(&#x27;request&#x27;, onRequest.bind(null, context))
+    .on(&#x27;response&#x27;, function handleResponse(response) {
+        response.on(&#x27;data&#x27;, onData.bind(null, context));
+
+        return onResponse(context, response);
+    })
+    .on(&#x27;end&#x27;, onEnd.bind(null, context));
+
+    request.progressContext = context;
+
+    return request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

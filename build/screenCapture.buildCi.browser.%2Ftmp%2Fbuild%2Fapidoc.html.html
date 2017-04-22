@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/IndigoUnited/node-request-progress#readme"
-
-    >request-progress (v3.0.0)</a>
+    <a href="https://github.com/IndigoUnited/node-request-progress#readme">request-progress (v3.0.0)</a>
 </h1>
 <h4>Tracks the download progress of a request made with mikeal/request, giving insight of various metrics including progress percent, download speed and time remaining</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.request-progress">module request-progress</a><ol>
 
@@ -93,14 +86,14 @@
     }
 
     if (request.response) {
-        throw new Error(&#x27;Already got response, it\&#x27;s too late to track progress&#x27;);
+        throw new Error('Already got response, it\'s too late to track progress');
     }
 
     // Parse options
     options = options || {};
     options.throttle = options.throttle == null ? 1000 : options.throttle;
     options.delay = options.delay || 0;
-    options.lengthHeader = options.lengthHeader || &#x27;content-length&#x27;;
+    options.lengthHeader = options.lengthHeader || 'content-length';
 
     // Create context
     context = {};
@@ -113,13 +106,13 @@
 
     // Attach listeners
     request
-    .on(&#x27;request&#x27;, onRequest.bind(null, context))
-    .on(&#x27;response&#x27;, function handleResponse(response) {
-        response.on(&#x27;data&#x27;, onData.bind(null, context));
+    .on('request', onRequest.bind(null, context))
+    .on('response', function handleResponse(response) {
+        response.on('data', onData.bind(null, context));
 
         return onResponse(context, response);
     })
-    .on(&#x27;end&#x27;, onEnd.bind(null, context));
+    .on('end', onEnd.bind(null, context));
 
     request.progressContext = context;
 
@@ -137,3 +130,4 @@
     ]
 </div>
 </div>
+</body></html>
